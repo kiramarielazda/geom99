@@ -84,8 +84,7 @@
       },
       onEachFeature: function (feature, layer) {
         layer.bindPopup('<h1>name: '+feature.properties.name+'</p>');
-      },
-      
+      },  
     }).addTo(map);
     campsiteLayer.bin
     L.control.scale({metric:true, imperial:false}).addTo(map);
