@@ -53,11 +53,15 @@
     pane: 'upper'
     };
     var linesgeojsonLayer = new L.GeoJSON.AJAX("JSON/trail.json", {style:myStyle, pane: 'middle'}).addTo(map);
-    var pointgeojsonLayer = new L.GeoJSON.AJAX("JSON/trailmarkers.json",{
+    var pointgeojsonLayer = new L.GeoJSON.AJAX("JSON/map.json",{
       pointToLayer: function(feature, latlng){
         return L.circleMarker(latlng, geojsonMarker);
+      },
+      onEachFeature: function (feature, layer) {
+        layer.bindPopup('<h1>name: '+feature.properties.name+'</p>');
       }
     }).addTo(map);
+    pointgeojsonLayer.bin
     L.control.scale({metric:true, imperial:false}).addTo(map);
   </script>
 </body>
