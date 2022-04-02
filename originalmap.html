@@ -59,6 +59,9 @@
       },
       onEachFeature: function (feature, layer) {
         layer.bindPopup('<h1>name: '+feature.properties.name+'</p>');
+      },
+      filter: function(feature, layer) {
+        return feature.properties.featuretype == "Marker"
       }
     }).addTo(map);
     pointgeojsonLayer.bin
