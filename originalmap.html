@@ -43,7 +43,7 @@
       color: 'black',
       weight: 5
     };
-    var kmMarker = L.icon({
+    /*var kmMarker = L.icon({
       iconUrl: "icons/point.svg",
       iconSize: [38,95],
     /*radius: 8,
@@ -51,9 +51,9 @@
     color: "#000",
     weight: 1,
     opacity: 1,
-    fillOpacity: 1,*/
+    fillOpacity: 1,
       pane: 'upper'
-      });
+      });*/
     var campMarker = L.icon ({
       iconUrl: "icons/tent.svg",
       iconSize: [36,36],
@@ -66,8 +66,7 @@
       pane: 'upper'
     });
     var linesgeojsonLayer = new L.GeoJSON.AJAX("JSON/trail.geojson", {style:myStyle, pane: 'middle'}).addTo(map);
-    var pointgeojsonLayer = new L.GeoJSON.AJAX("JSON/markers.geojson",{
-      icon: kmMarker,
+    var pointgeojsonLayer = new L.GeoJSON.AJAX("JSON/points.geojson",{
       filter: function(feature, layer) {
         return feature.properties.featuretype == "Marker";
       },
@@ -75,12 +74,20 @@
         return L.circleMarker(latlng, kmMarker);
       },*/
       onEachFeature: function (feature, layer) {
+        var kmMarkerStyle = L.Icon.extend({
+          options: {
+            iconSize: [36,36],
+            iconAnchor: [15,15]
+          }
+        });
+        var kmMarker = new kmMarkerStyle({iconUrl: feature.properties.icon});
         layer.bindPopup('<h1>name: '+feature.properties.name+'</p>');
+        icon: kmMarker
       },
       
     }).addTo(map);
     pointgeojsonLayer.bin
-    var campsiteLayer = new L.GeoJSON.AJAX("JSON/markers.geojson",{
+    var campsiteLayer = new L.GeoJSON.AJAX("JSON/points.geojson",{
       icon: campMarker,
       filter: function(feature, layer) {
         return feature.properties.featuretype == "Campsite";
