@@ -14,9 +14,6 @@
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
    crossorigin=""/>
-  <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css">
-  <link rel="stylesheet" href="icons/leaflet.awesome-markers.css">
-  <script src="icons/leaflet.awesome-markers.js"></script>
   <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
    crossorigin=""></script>
@@ -46,19 +43,17 @@
       color: 'black',
       weight: 5
     };
-    var kmMarker = {
-    radius: 8,
+    var kmMarker = L.icon({
+      iconUrl: "icons/point.svg",
+      iconSize: [38,95],
+    /*radius: 8,
     fillColor: "red",
     color: "#000",
     weight: 1,
     opacity: 1,
-    fillOpacity: 1,
-    pane: 'upper'
-    };
-    var coffee = L.AwesomeMarkers.icon({
-      icon: 'coffee',
-      markerColor: 'red'
-    });
+    fillOpacity: 1,*/
+      pane: 'upper'
+      });
     var geojsonMarker = {
     radius: 8,
     fillColor: "white",
@@ -74,7 +69,7 @@
         return feature.properties.featuretype == "Marker";
       },
       pointToLayer: function(feature, latlng){
-        return L.circleMarker(latlng, coffee);
+        return L.circleMarker(latlng, kmMarker);
       },
       onEachFeature: function (feature, layer) {
         layer.bindPopup('<h1>name: '+feature.properties.name+'</p>');
