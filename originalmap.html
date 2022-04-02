@@ -43,39 +43,34 @@
       color: 'black',
       weight: 5
     };
-    var kmMarker = L.icon({
-      iconUrl: "icons/tent.svg",
-      iconSize: [36,36],
-      iconAnchor: [15, 15],
-    /*radius: 8,
-    fillColor: "red",
-    color: "#000",
-    weight: 1,
-    opacity: 1,
-    fillOpacity: 1,*/
+    var kmMarker ={
+      radius: 8,
+      fillColor: "red",
+      color: "#000",
+      weight: 1,
+      opacity: 1,
+      fillOpacity: 1,
       pane: 'upper'
-      });
-    var campMarker = L.icon ({
-      iconUrl: "icons/tent.svg",
-      iconSize: [36,36],
-    /*radius: 8,
-    fillColor: "white",
-    color: "#000",
-    weight: 1,
-    opacity: 1,
-    fillOpacity: 1,*/
+    };
+    var campMarker = {
+      radius: 8,
+      fillColor: "white",
+      color: "#000",
+      weight: 1,
+      opacity: 1,
+      fillOpacity: 1,
       pane: 'upper'
-    });
+    };
     var linesgeojsonLayer = new L.GeoJSON.AJAX("JSON/trail.geojson", {style:myStyle, pane: 'middle'}).addTo(map);
     var pointgeojsonLayer = new L.GeoJSON.AJAX("JSON/points.geojson",{
       filter: function(feature, layer) {
         return feature.properties.featuretype == "Marker";
       },
+      pointToLayer: function(feature, latlng){
+        return L.circleMarker(latlng, kmMarker);
+      },
       onEachFeature: function (feature, layer) {
         layer.bindPopup('<h1>name: '+feature.properties.name+'</p>');
-      },
-      pointToLayer: function(feature, latlng){
-        return L.marker([feature.properties.coordinates[0], feature.properties.coordinates[1]], {icon: kmMarker});
       },
     }).addTo(map);
     pointgeojsonLayer.bin
@@ -84,9 +79,9 @@
       filter: function(feature, layer) {
         return feature.properties.featuretype == "Campsite";
       },
-      /*pointToLayer: function(feature, latlng){
-        return L.circleMarker(latlng, geojsonMarker);
-      },*/
+      pointToLayer: function(feature, latlng){
+        return L.circleMarker(latlng, campMarker);
+      },
       onEachFeature: function (feature, layer) {
         layer.bindPopup('<h1>name: '+feature.properties.name+'</p>');
       },
