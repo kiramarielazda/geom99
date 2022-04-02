@@ -52,7 +52,7 @@
     fillOpacity: 1,
     pane: 'upper'
     };
-    var linesgeojsonLayer = new L.GeoJSON.AJAX("JSON/trail.json", {style:myStyle, pane: 'middle'}).addTo(map);
+    var linesgeojsonLayer = new L.GeoJSON.AJAX("JSON/trail.geojson", {style:myStyle, pane: 'middle'}).addTo(map);
     var pointgeojsonLayer = new L.GeoJSON.AJAX("JSON/markers.json",{
       pointToLayer: function(feature, latlng){
         return L.circleMarker(latlng, geojsonMarker);
