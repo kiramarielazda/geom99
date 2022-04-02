@@ -70,9 +70,6 @@
       filter: function(feature, layer) {
         return feature.properties.featuretype == "Marker";
       },
-      /*pointToLayer: function(feature, latlng){
-        return L.circleMarker(latlng, kmMarker);
-      },*/
       onEachFeature: function (feature, layer) {
         var kmMarkerStyle = L.Icon.extend({
           options: {
@@ -82,9 +79,10 @@
         });
         var kmMarker = new kmMarkerStyle({iconUrl: feature.properties.icon});
         layer.bindPopup('<h1>name: '+feature.properties.name+'</p>');
-        icon: kmMarker
       },
-      
+      pointToLayer: function(feature, latlng){
+        return L.marker(latlng, {icon: kmMarker});
+      },
     }).addTo(map);
     pointgeojsonLayer.bin
     var campsiteLayer = new L.GeoJSON.AJAX("JSON/points.geojson",{
