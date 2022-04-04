@@ -88,6 +88,14 @@
     }).addTo(map);
     campsiteLayer.bin
     L.control.scale({metric:true, imperial:false}).addTo(map);
+    var basemap = {
+      "Terrain": OpenTopoMap
+    };
+    var overlayMaps = {
+      "Campsites": campsiteLayer,
+      "Markers": pointgeojsonLayer
+    };
+    L.control.layers(basemap, overlayMaps).addTo(map);
   </script>
 </body>
 </html>
