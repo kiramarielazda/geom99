@@ -40,10 +40,12 @@
     });
     customMap.addTo(map);*/
     var myStyle = {
-      color: 'black',
-      weight: 5
+      color: 'white',
+      weight: 3,
+      dashArray: [20,20],
+      dashOffset: 10
     };
-    var kmMarker ={
+    /*var kmMarker ={
       radius: 8,
       fillColor: "red",
       color: "#000",
@@ -60,7 +62,7 @@
       opacity: 1,
       fillOpacity: 1,
       pane: 'upper'
-    };
+    };*/
     var myIcon = L.Icon.extend({
       options: {
         iconSize: [20,20],
@@ -94,7 +96,6 @@
         layer.bindPopup('<h1>name: '+feature.properties.name+'</p>');
       },  
     }).addTo(map);
-    /*var tentpoint = L.marker([46.2274668223792,-77.855617850282], {icon: tent}).addTo(map);*/
     campsiteLayer.bin
     L.control.scale({metric:true, imperial:false}).addTo(map);
     var basemap = {
