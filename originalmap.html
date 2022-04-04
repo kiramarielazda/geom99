@@ -40,8 +40,8 @@
     });
     customMap.addTo(map);*/
     var myStyle = {
-      color: 'black',
-      weight: 3,
+      color: 'red',
+      weight: 1,
       dashArray: [10,10],
       dashOffset: 2
     };
@@ -85,7 +85,6 @@
     }).addTo(map);
     pointgeojsonLayer.bin
     var campsiteLayer = new L.GeoJSON.AJAX("JSON/points.geojson",{
-      icon: campMarker,
       filter: function(feature, layer) {
         return feature.properties.featuretype == "Campsite";
       },
