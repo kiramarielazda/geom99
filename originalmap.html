@@ -61,12 +61,13 @@
       fillOpacity: 1,
       pane: 'upper'
     };
-    var tentIcon = L.Icon ({
-      iconUrl: 'icons/tent.png',   
-      iconSize: [40,40],
-      iconAnchor: [20,15]
+    var tentIcon = L.Icon.extend({
+      options: {
+        iconSize: [40,40],
+        iconAnchor: [20,15]
+      }
     });
-    var tentpoint = L.marker([46.22,-77.85], {icon: tentIcon}).addTo(map);
+    var tent = new tentIcon({iconUrl: 'icons/tent.png'});
     var linesgeojsonLayer = new L.GeoJSON.AJAX("JSON/trail.geojson", {style:myStyle, pane: 'middle'}).addTo(map);
     var pointgeojsonLayer = new L.GeoJSON.AJAX("JSON/points.geojson",{
       filter: function(feature, layer) {
@@ -92,6 +93,7 @@
         layer.bindPopup('<h1>name: '+feature.properties.name+'</p>');
       },  
     }).addTo(map);
+    var tentpoint = L.marker([46.2274668223792,-77.855617850282], {icon: tent}).addTo(map);
     campsiteLayer.bin
     L.control.scale({metric:true, imperial:false}).addTo(map);
     var basemap = {
