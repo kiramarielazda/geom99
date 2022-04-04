@@ -61,23 +61,21 @@
       fillOpacity: 1,
       pane: 'upper'
     };
-    var tentIcon = L.Icon({
-      iconUrl:'icons/tent.png',
-      iconSize: [20,20],
-      iconAnchor: [10,20]
+    var myIcon = L.Icon.extend({
+      options: {
+        iconSize: [20,20],
+        iconAnchor: [10,20]
+      }
     });
-    var pinIcon = L.icon({
-      iconUrl:'icons/pin.png',
-      iconSize: [20,20],
-      iconAnchor: [10,20]
-    });
+    var tent = new myIcon({iconUrl:'icons/tent.png'});
+    var pin = new myIcon({iconUrl: 'icons/pin.png'});
     var linesgeojsonLayer = new L.GeoJSON.AJAX("JSON/trail.geojson", {style:myStyle, pane: 'middle'}).addTo(map);
     var pointgeojsonLayer = new L.GeoJSON.AJAX("JSON/points.geojson",{
       filter: function(feature, layer) {
         return feature.properties.featuretype == "Marker";
       },
       pointToLayer: function(feature, latlng){
-        return L.marker(latlng, {icon: pinIcon});
+        return L.marker(latlng, {icon: pin});
       },
       onEachFeature: function (feature, layer) {
         layer.bindPopup('<h1>name: '+feature.properties.name+'</p>');
