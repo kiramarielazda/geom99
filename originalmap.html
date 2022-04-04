@@ -87,13 +87,13 @@
         return feature.properties.featuretype == "Campsite";
       },
       pointToLayer: function(feature, latlng){
-        return L.circleMarker(latlng, campMarker);
+        return L.marker(latlng, {icon: tent});
       },
       onEachFeature: function (feature, layer) {
         layer.bindPopup('<h1>name: '+feature.properties.name+'</p>');
       },  
     }).addTo(map);
-    var tentpoint = L.marker([46.2274668223792,-77.855617850282], {icon: tent}).addTo(map);
+    /*var tentpoint = L.marker([46.2274668223792,-77.855617850282], {icon: tent}).addTo(map);*/
     campsiteLayer.bin
     L.control.scale({metric:true, imperial:false}).addTo(map);
     var basemap = {
