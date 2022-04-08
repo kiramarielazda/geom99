@@ -108,6 +108,7 @@
       "Markers": pointgeojsonLayer
     };
     L.control.layers(basemap, overlayMaps).addTo(map);
+    
     var searchControl = new L.Control.Search({
       layer: pointgeojsonLayer,
       propertyName: 'name',
