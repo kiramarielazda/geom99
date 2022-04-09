@@ -115,8 +115,8 @@
       marker: false,
       moveToLocation: function(latlng, title, map) {
         //map.fitBounds( latlng.layer.getBounds() );
-        var zoom = map.getBoundsZoom(latlng.layer.getBounds());
-          map.setView(latlng, zoom); // access the zoom
+        var zoom = 15
+        map.setView(latlng, zoom); // access the zoom
       }
 	  });
   searchControl.on('search:locationfound', function(e) {
