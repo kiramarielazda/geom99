@@ -126,7 +126,13 @@
 		//map.removeLayer(this._markerSearch)
 		e.layer.openPopup("name").openOn(map);
 
-	})
+	}).on('search:collapsed', function(e) {
+
+		pointgeojsonLayer.eachLayer(function(layer) {	//restore feature color
+			pointgeojsonLayer.resetStyle(layer);
+		});	
+	});
+	
 	map.addControl( searchControl );
   </script>
 </body>
