@@ -108,7 +108,7 @@
       "Markers": POILayer
     };
     L.control.layers(basemap, overlayMaps).addTo(map);
-    var allPoints = L.layerGroup([POILayer, campsiteLayer])
+    var allPoints = L.layerGroup([POILayer, campsiteLayer]).addTo(map);
     var searchControl = new L.Control.Search({
       layer: allPoints,
       propertyName: 'name',
