@@ -126,8 +126,7 @@
 		//map.removeLayer(this._markerSearch)
 
 		e.layer.setStyle({fillColor: '#3f0', color: '#0f0'});
-		if(e.layer._popup)
-			e.layer.openPopup();
+		e.layer.openPopup().openOn(map);
 
 	}).on('search:collapsed', function(e) {
 
