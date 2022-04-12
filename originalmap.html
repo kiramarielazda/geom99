@@ -74,8 +74,8 @@
     });
     var tent = new myIcon({iconUrl:'icons/tent.png'});
     var pin = new myIcon({iconUrl: 'icons/pin.png'});
-    var linesgeojsonLayer = new L.GeoJSON.AJAX("JSON/trail.geojson", {style:myStyle, pane: 'middle'}).addTo(map);
-    var pointgeojsonLayer = new L.GeoJSON.AJAX("JSON/points.geojson",{
+    var trail = new L.GeoJSON.AJAX("JSON/trail.geojson", {style:myStyle, pane: 'middle'}).addTo(map);
+    var kmLayer = new L.GeoJSON.AJAX("JSON/points.geojson",{
       filter: function(feature, layer) {
         return feature.properties.featuretype == "Marker";
       },
@@ -86,7 +86,7 @@
         layer.bindPopup('<h1>name: '+feature.properties.name+'</p>');
       },
     }).addTo(map);
-    pointgeojsonLayer.bin
+    km.bin
     var campsiteLayer = new L.GeoJSON.AJAX("JSON/points.geojson",{
       filter: function(feature, layer) {
         return feature.properties.featuretype == "Campsite";
@@ -105,12 +105,12 @@
     };
     var overlayMaps = {
       "Campsites": campsiteLayer,
-      "Markers": pointgeojsonLayer
+      "Markers": kmLayer
     };
     L.control.layers(basemap, overlayMaps).addTo(map);
     
     var searchControl = new L.Control.Search({
-      layer: pointgeojsonLayer,
+      layer: L.featureGroup([km, campsiteLayer]),
       propertyName: 'name',
       marker: false,
       moveToLocation: function(latlng, title, map) {
@@ -124,15 +124,8 @@
 		//console.log('search:locationfound', );
 
 		//map.removeLayer(this._markerSearch)
-		e.layer.openPopup("name").openOn(map);
-
-	}).on('search:collapsed', function(e) {
-
-		pointgeojsonLayer.eachLayer(function(layer) {	//restore feature color
-			pointgeojsonLayer.resetStyle(layer);
-		});	
-	});
-	
+		e.layer.openPopup("name");
+	})
 	map.addControl( searchControl );
   </script>
 </body>
