@@ -124,17 +124,9 @@
 		//console.log('search:locationfound', );
 
 		//map.removeLayer(this._markerSearch)
+		e.layer.openPopup("name").openOn(map);
 
-		e.layer.setStyle({fillColor: '#3f0', color: '#0f0'});
-		e.layer.openPopup().openOn(map);
-
-	}).on('search:collapsed', function(e) {
-
-		pointgeojsonLayer.eachLayer(function(layer) {	//restore feature color
-			pointgeojsonLayer.resetStyle(layer);
-		});	
-	});
-	
+	})
 	map.addControl( searchControl );
   </script>
 </body>
