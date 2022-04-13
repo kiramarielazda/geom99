@@ -48,24 +48,6 @@
       dashArray: [10,10],
       dashOffset: 2
     };
-    /*var kmMarker ={
-      radius: 8,
-      fillColor: "red",
-      color: "#000",
-      weight: 1,
-      opacity: 1,
-      fillOpacity: 1,
-      pane: 'upper'
-    };
-    var campMarker = {
-      radius: 8,
-      fillColor: "white",
-      color: "#000",
-      weight: 1,
-      opacity: 1,
-      fillOpacity: 1,
-      pane: 'upper'
-    };*/
     var myIcon = L.Icon.extend({
       options: {
         iconSize: [20,20],
@@ -74,7 +56,8 @@
     });
     var tent = new myIcon({iconUrl:'icons/tent.png'});
     var pin = new myIcon({iconUrl: 'icons/pin.png'});
-    var linesgeojsonLayer = new L.GeoJSON.AJAX("JSON/trail.geojson", {style:myStyle, pane: 'middle'}).addTo(map);
+    var trail = new L.GeoJSON.AJAX("JSON/trail.geojson", {style:myStyle, pane: 'middle'}).addTo(map);
+    
     var POILayer = new L.GeoJSON.AJAX("JSON/points.geojson",{
       filter: function(feature, layer) {
         return feature.properties.featuretype == "Marker";
@@ -87,6 +70,7 @@
       },
     }).addTo(map);
     POILayer.bin
+    
     var campsiteLayer = new L.GeoJSON.AJAX("JSON/points.geojson",{
       filter: function(feature, layer) {
         return feature.properties.featuretype == "Campsite";
@@ -99,7 +83,9 @@
       },  
     }).addTo(map);
     campsiteLayer.bin
+    
     L.control.scale({metric:true, imperial:false}).addTo(map);
+    
     var basemap = {
       "Terrain": OpenTopoMap
     };
@@ -108,7 +94,9 @@
       "Markers": POILayer
     };
     L.control.layers(basemap, overlayMaps).addTo(map);
+    
     var allPoints = L.layerGroup([POILayer, campsiteLayer]);
+    
     var searchControl = new L.Control.Search({
       layer: allPoints,
       propertyName: 'name',
@@ -118,19 +106,17 @@
         map.setView(latlng, zoom);
       }
 	  });
-  searchControl.on('search:locationfound', function(e) {
-		if(e.layer._popup)
-      e.layer.setPopupContent(layer.feature.properties.name);
-			e.layer.openPopup();
-
-	}).on('search:collapsed', function(e) {
-
-		POILayer.eachLayer(function(layer) {	//restore feature color
-			POILayer.resetStyle(layer);
-		});	
-	});
+    searchControl.on('search:locationfound', function(e) {
+      if(e.layer._popup)
+        e.layer.setPopupContent(layer.feature.properties.name);
+        e.layer.openPopup();
+    }).on('search:collapsed', function(e) {
+      POILayer.eachLayer(function(layer) {
+        POILayer.resetStyle(layer);
+		  });	
+	  });
 	
-	map.addControl( searchControl );
+	  map.addControl( searchControl );
   </script>
 </body>
 </html>
