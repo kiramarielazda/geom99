@@ -108,7 +108,7 @@
     searchControl.on('search:locationfound', function(e) {
       console.log(e);
       if(e.layer._popup)
-        e.layer.setPopupContent(layer.feature.properties.name);
+        e.layer.setPopupContent(e.layer.feature.properties.name);
         e.layer.openPopup();
     }).on('search:collapsed', function(e) {
       POILayer.eachLayer(function(layer) {
