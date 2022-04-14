@@ -86,7 +86,29 @@
     
     <div id="qgis">
         <h2>QGIS ⭐⭐</h2>
-       <p> Info about QGIS <p>
+            <h3> Overview:</h3> 
+<p>QGIS, being an open-source program with a rich variety of functionality, was worth looking into for base mapping needs. The program proved to be difficult to produce an effective functional Web map.<p>
+
+<h3>The Process:</h3>
+
+<h4>What Works:</h4>
+<ul>
+<li>Desktop application: Importing data, geoprocessing, styling, and symbology.</li> 
+<li>QGIS2Web Plugin: Downloadable plugin to create Web maps using either OpenLayers, Leaflet, or Mapbox GL JS as outputs. </li>
+<li>Pop ups: Creating pop up boxes for layers (Widgets in QGIS) </li>
+<li>Exporting a web map with the OpenLayers extension  </li>
+<li>Exporting a web map with the MapBox GL JS extension </li>
+<li>Exporting and Hosting a QGIS leaflet exported map with the KMZ markers rendered as a “single value” and shapefiles (waterbody, river, road, tote road trail). </li>
+</ul>
+
+<h4> What Doesn’t Work:</h4>
+<p>Task 1: Exporting the KML/KMZ styled Tote Road Trail markers as “unique values” by “name” as a Leaflet map. </p> 
+<p>Result 1: The Python script would fail each time, due to legend styling and crash QGIS desktop application. Tried: Removing all legends, and current styling to single values </p>
+<p>Result 1.1: The Python script would fail each time, due to a legend styling and crash QGIS desktop application. The result only changed if the KMZ files were completely removed from the project and brought back in and styled as single values. </p>
+<p>Task 2: Importing the exported  OpenLayers Web map or MapBox GL JS Web map and importing them into GitHub. </p>
+<p>Result 2: GitHub would not accept the folders containing the styling for the OpenLayers Web map or the Markers for MapBox GL JS Web map as there were too many styling options (Over 100).  Another issue being some files wouldn’t import to GitHub as they were “hidden”. </p>
+<p>Task 3: Inserting specified text into pop ups on KMZ files </p>
+<p>Result 3: Only the ID or FID fields could be used from the KMZ files for the Web map popups, and the pop ups for the shapefiles weren't easy to filter through </p>
     </div>
       
     <div id="Leaflet">
