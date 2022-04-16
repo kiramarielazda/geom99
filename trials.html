@@ -30,6 +30,21 @@
   #survey,#kobo,#mapbox,#osm,#qgis {padding: 30px;}
   #survey {margin-top:50px;}
   .checked {color: orange;}
+  .iframeContainer {
+    position: relative;
+    overflow: hidden;
+    width:100%;
+    padding-top: 50%;
+  }
+  .responsiveIframe {
+    position: absolute;
+    top:0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+  }
   </style>
 </head>
 <body>
@@ -105,9 +120,9 @@
       <span class="fa fa-star checked"></span>
       <span class="fa fa-star checked"></span></h2>
     <p> Leaflet info </p>
-    <div id="Leaflet">
+    <div id="Leaflet" class="iframeContainer">
       <h2> Open Street Map, Leaflet, and GeoJSON </h2>
-      <iframe src="https://kiramarielazda.github.io/geom99/originalmap.html" title="Interactive Trail Map made with Leaflet" width="50%" height="500" style="border:1px solid black;"></iframe>
+      <iframe class = "responsiveIframe" src="https://kiramarielazda.github.io/geom99/originalmap.html" title="Interactive Trail Map made with Leaflet" width="50%" height="500" style="border:1px solid black;"></iframe>
     </div>
     <div id="Leaflet">
       <h2> Open Street Map, Leaflet and KMZ files</h2>
