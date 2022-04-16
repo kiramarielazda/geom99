@@ -102,19 +102,19 @@
     </div>
     <div id="Leaflet">
       <h2> Open Street Map, Leaflet and KMZ files</h2>
-      <h3> Overview:</h3> 
+      <h3> Overview:</h3>
       <p>The use of Open Street Map (OSM) and leaflet have been a suitable combination for web trail mapping needs. Open street maps provides a variety of different base maps inclusive with an array of base data not always seen in other open-source base maps. Combined with the simplicity of Leaflets open-source JavaScript Library web mapping has never been easier. <p>
       <h3>The Process:</h3>
       <h4>What Works:</h4>
       <ul>
-      <li>Displaying an OpenStreetMap base map from a URL.</li> 
+      <li>Displaying an OpenStreetMap base map from a URL.</li>
       <li>Having an OpenStreetMap base map and using Leaflet’s JavaScript library to display the KMZ filesstored on the GitHub repository.</li>
       <li>Displaying Pop ups for the KMZ point markers.</li>
       <li>The ability to toggle layers on and off.</li>
       <li>Overriding KMZ GPS Styling of point markers to web displayable markers.</li>
       </ul>
       <h4> What Doesn’t Work:</h4>
-      <p>Task 1: Hosting a tiled server over GitHub to host OpenStreetMap Base tiles.</p> 
+      <p>Task 1: Hosting a tiled server over GitHub to host OpenStreetMap Base tiles.</p>
       <p>Result 1:The docker file would not set up correctly to host a server for the OSM tile(s).</p>
       <p>Result 2: Orange “polygon” reflecting from the bends on the Dumoine Trail KMZ file. </p>
       <h3>Working with KMZ files:</h3>
@@ -123,37 +123,37 @@
       <iframe src="https://altalsm.github.io/pl1/opensource/leafletshapefile.html" title="leaflet-kmz" width="50%" height="500" style="border:1px solid black;"></iframe>
   </div>
 <!--Section for Mapbox-->
-  <div id="osm">       
+  <div id="osm">
     <h2>Mapbox <span class="fa fa-star checked"></span>
-    <span class="fa fa-star checked"></span>
-    <span class="fa fa-star checked"></span>
-    <span class="fa fa-star "></span>
-    <span class="fa fa-star "></span></h2> 
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star "></span>
+      <span class="fa fa-star "></span></h2>
     <p> Info about Mapbox </p>
   </div>
 <!-- Section for QGIS-->
   <div id="qgis">
     <h2>QGIS <span class="fa fa-star checked"></span>
-    <span class="fa fa-star checked"></span>
-    <span class="fa fa-star "></span>
-    <span class="fa fa-star "></span>
-    <span class="fa fa-star "></span></h2>
-    <h3> Overview:</h3> 
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star "></span>
+      <span class="fa fa-star "></span>
+      <span class="fa fa-star "></span></h2>
+    <h3> Overview:</h3>
     <p>QGIS, being an open-source program with a rich variety of functionality, was worth looking into for base mapping needs. The program proved to be difficult to produce an effective functional Web map.
       As seen in the above section working with KMZ files is not ideal and many errors in QGIS were due to working with the KMZ files. After testing similar processes with
       a shapefile, many of the program crashes remained. With the only difference being the pop ups allowed more than the ID or FID field while working with shapefiles.<p>
     <h3>The Process:</h3>
     <h4>What Works:</h4>
     <ul>
-    <li>Desktop application: Importing data, geoprocessing, styling, and symbology.</li> 
-    <li>QGIS2Web Plugin: Downloadable plugin to create Web maps using either OpenLayers, Leaflet, or Mapbox GL JS as outputs.</li>
-    <li>Pop ups: Creating pop up boxes for layers (Widgets in QGIS).</li>
-    <li>Exporting a web map with the OpenLayers extension.</li>
-    <li>Exporting a web map with the MapBox GL JS extension.</li>
-    <li>Exporting and Hosting a QGIS leaflet exported map with the KMZ markers rendered as a “single value” and shapefiles (waterbody, river, road, tote road trail).</li>
+      <li>Desktop application: Importing data, geoprocessing, styling, and symbology.</li>
+      <li>QGIS2Web Plugin: Downloadable plugin to create Web maps using either OpenLayers, Leaflet, or Mapbox GL JS as outputs.</li>
+      <li>Pop ups: Creating pop up boxes for layers (Widgets in QGIS).</li>
+      <li>Exporting a web map with the OpenLayers extension.</li>
+      <li>Exporting a web map with the MapBox GL JS extension.</li>
+      <li>Exporting and Hosting a QGIS leaflet exported map with the KMZ markers rendered as a “single value” and shapefiles (waterbody, river, road, tote road trail).</li>
     </ul>
     <h4> What Doesn’t Work:</h4>
-    <p>Task 1: Exporting the KML/KMZ styled Tote Road Trail markers as “unique values” by “name” as a Leaflet map.</p> 
+    <p>Task 1: Exporting the KML/KMZ styled Tote Road Trail markers as “unique values” by “name” as a Leaflet map.</p>
     <p>Result 1: The Python script would fail each time, due to legend styling and crash QGIS desktop application. Tried: Removing all legends, and current styling to single values.</p>
     <p>Result 1.1: The Python script would fail each time, due to a legend styling and crash QGIS desktop application. The result only changed if the KMZ files were completely removed from the project and brought back in and styled as single values.</p>
     <p>Task 2: Importing the exported  OpenLayers Web map or MapBox GL JS Web map and importing them into GitHub.</p>
