@@ -27,7 +27,7 @@
   .w3-bar .w3-button {
     padding: 16px;
   }
-  #survey,#kobo,#mapbox,#osm,#qgis {padding: 30px;}
+  .trials {padding: 30px;}
   #survey {margin-top:50px;}
   .checked {color: orange;}
   .iframeContainer {
@@ -68,7 +68,7 @@
 <!--Section for survey123-->
 <!--Link for the checked/unchecked stars https://www.w3schools.com/howto/howto_css_star_rating.asp-->
 <!--https://emojipedia.org/star/ star emoji reference for all sections (also note there is many options we can change it)-->
-  <div id="survey">
+  <div class="trials" id="survey">
       <h1>Survey 123 <span class="fa fa-star checked"></span>
         <span class="fa fa-star checked"></span>
         <span class="fa fa-star checked"></span>
@@ -91,7 +91,7 @@
       <p>really nothing, very adaptable and customizable</p>
   </div>
 <!--Section for Kobo Toolbox-->
-  <div id="kobo">
+  <div class="trials">
       <h1>KoboToolbox <span class="fa fa-star checked"></span>
         <span class="fa fa-star checked"></span>
         <span class="fa fa-star checked"></span>
@@ -113,7 +113,7 @@
 <!--Section for Leaflet-->
   <div class="section-break"> </div>
 
-  <div id="osm">
+  <div class="trials">
     <h1>Leaflet<span class="fa fa-star checked"></span>
       <span class="fa fa-star checked"></span>
       <span class="fa fa-star checked"></span>
@@ -140,7 +140,7 @@
       <li></li>
       <li></li>
     </ol>
-    <div id="Leaflet" class="iframeContainer">
+    <div class="iframeContainer">
       <iframe class = "responsiveIframe" src="https://kiramarielazda.github.io/geom99/originalmap.html" title="Interactive Trail Map made with Leaflet" height="500" style="border:1px solid black;"></iframe>
     </div>
     <h2>Lessons Learned: </h2>
@@ -149,7 +149,7 @@
     <h3> Shortcomings </h3>
     <li> </li>
     <h2> Takeaways</h2>
-    <div id="Leaflet">
+    <div class="trials">
       <h2> Open Street Map, Leaflet and KMZ files</h2>
       <h3> Overview:</h3>
       <p>The use of Open Street Map (OSM) and leaflet have been a suitable combination for web trail mapping needs. Open street maps provides a variety of different base maps inclusive with an array of base data not always seen in other open-source base maps. Combined with the simplicity of Leaflet's open-source JavaScript Library web mapping has never been easier. <p>
@@ -170,7 +170,7 @@
       <p>KMZ files have been seeing their way out over the years and there is a reason why. After extensive testing with the original GPS KMZ file, in multiple platforms it proved to be extremely difficult and arose more problems than working with the GeoJSON, in similar platforms. The KMZ file needed many tweaks to get working with Leaflet and Open Street Map, such as adjusting the markers from the GPS markers, the trail having shadowing around the bends, while the GeoJSON was able to adjust the markers with ease and never had a shadowing issue around the trail bends. The KMZ files in QGIS proved to be just as difficult as the pop ups would not use any other field than ID or FID, whereas shapefiles and other formats were able to display all fields in the pop ups.</p>
     </div>
 <!--Section for Mapbox-->
-  <div id="osm">
+  <div class="trials">
     <h1>Mapbox <span class="fa fa-star checked"></span>
       <span class="fa fa-star checked"></span>
       <span class="fa fa-star checked"></span>
@@ -207,7 +207,7 @@
           within Mapbox Studio to make our trail's basemap attractive and informative.</p>
   </div>
 <!-- Section for QGIS-->
-  <div id="qgis">
+  <div class="trials">
     <h1>QGIS <span class="fa fa-star checked"></span>
       <span class="fa fa-star checked"></span>
       <span class="fa fa-star "></span>
@@ -238,6 +238,7 @@
 <!-- Footer -->
   <footer class="w3-center w3-black w3-padding-64">
     <a href="index.html#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+    <p>Created for Fleming College GIS | April 2022</p>
     <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
   </footer>
 </body>
