@@ -136,9 +136,15 @@
     <h2> Working with GeoJSON data </h2>
     <h3>The Process:</h3>
     <ol>
-      <li></li>
-      <li></li>
-      <li></li>
+      <li>Convert shapefile or KML data to GeoJSON. </li>
+      <li>Evaluate and edit the non-spatial attributes using <a href='geojson.io'>geojson.io </a>and download the updated file. </li>
+      <li>Download and use the <a href='https://github.com/calvinmetcalf/leaflet-ajax'>AJAX plugin for Leaflet</a> that will allow you to call GeoJSON data from an external file rather than having to embed it directly into your HTML/JS framework.</li>
+      <li>Create a new map object using Leaflet and set extents and zoom level.</li>
+      <li>Choose a tile provider to form the base of the map. We have tried using a customized Mapbox tile, a simple OSM tile and <a href='http://leaflet-extras.github.io/leaflet-providers/preview/index.html'>other open-source tiles</a>. The example below uses a tile called OpenTopoMap.</li> 
+      <li>Add a new GeoJSON data layer using the Leaflet AJAX commands.</li>
+      <li>Use filters to select a subset of the GeoJSON point data, style it according to its attributes and access its properties to bind popups to the points. </li>
+      <li>Use Leaflet’s layer control to allow users to toggle layers on and off on the map.</li>
+      <li>Download and use the <a href='https://github.com/stefanocudini/leaflet-search'>Search Control plugin for Leaflet</a> to allow users to search for features on the map and zoom to the selected result.</li>  
     </ol>
     <div class="iframeContainer">
       <iframe class = "responsiveIframe" src="https://kiramarielazda.github.io/geom99/originalmap.html" title="Interactive Trail Map made with Leaflet" height="500" style="border:1px solid black;"></iframe>
@@ -149,6 +155,7 @@
     <h3> Shortcomings </h3>
     <li> </li>
     <h2> Takeaways</h2>
+  </div>
     <div class="trials">
       <h2> Open Street Map, Leaflet and KMZ files</h2>
       <h3> Overview:</h3>
