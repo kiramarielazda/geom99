@@ -69,11 +69,11 @@
 <!--Link for the checked/unchecked stars https://www.w3schools.com/howto/howto_css_star_rating.asp-->
 <!--https://emojipedia.org/star/ star emoji reference for all sections (also note there is many options we can change it)-->
   <div id="survey">
-      <h2>Survey 123 <span class="fa fa-star checked"></span>
+      <h1>Survey 123 <span class="fa fa-star checked"></span>
         <span class="fa fa-star checked"></span>
         <span class="fa fa-star checked"></span>
         <span class="fa fa-star"></span>
-        <span class="fa fa-star"></span></h2>
+        <span class="fa fa-star"></span></h1>
       <!-- these sections are incomplete, needed to take a break so the basic content format is here,
       then I'll add screenshots into the design after I've got the words worked out-->
         <h3> Overview:</h3>
@@ -92,11 +92,11 @@
   </div>
 <!--Section for Kobo Toolbox-->
   <div id="kobo">
-      <h2>KoboToolbox <span class="fa fa-star checked"></span>
+      <h1>KoboToolbox <span class="fa fa-star checked"></span>
         <span class="fa fa-star checked"></span>
         <span class="fa fa-star checked"></span>
         <span class="fa fa-star checked"></span>
-        <span class="fa fa-star checked"></span></h2>
+        <span class="fa fa-star checked"></span></h1>
       <h3> Overview:</h3>
       <p>what is kobotoolbox and how does it work<p>
       <h3>The Process:</h3>
@@ -114,14 +114,26 @@
   <div class="section-break"> </div>
 
   <div id="osm">
-    <h2>Leaflet and GeoJSON<span class="fa fa-star checked"></span>
+    <h1>Leaflet<span class="fa fa-star checked"></span>
       <span class="fa fa-star checked"></span>
       <span class="fa fa-star checked"></span>
       <span class="fa fa-star checked"></span>
-      <span class="fa fa-star checked"></span></h2>
-    <h3>Overview:</h3>
-    <p>The lightweight yet powerful Leaflet JavaScript library has made displaying geospatial data on an interactive web map an approachable task.</p>
-    <p>Working with the trail data in GeoJSON format allows for easy customization of the features' non-spatial attributes and Leaflet interacts seamlessly with this data format.</p>
+      <span class="fa fa-star checked"></span></h1>
+    <p>Leaflet is a lightweight, mobile-friendly, open-source JavaScript library for customizing interactive maps. 
+      Leaflet supports HTML5 and CSS3, and the interface also works with numerous web mapping applications such as 
+      Google Maps API, Mapbox, and OpenStreetMap. Designed with simplicity in mind, its source code is easily readable and simple to work with. 
+      Leaflet also supports many file formats including shapefiles, GeoJSON, and KML.</p>
+    <h2> Working with KML data </h2>
+    <h3>The Process:</h3>
+    <ol>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ol>
+    <div class="iframeContainer">
+        <iframe class = "responsiveIframe" src="https://altalsm.github.io/pl1/opensource/leafletshapefile.html" title="leaflet-kmz" height="500" style="border:1px solid black;"></iframe>
+      </div>
+    <h2> Working with GeoJSON data </h2>
     <h3>The Process:</h3>
     <ol>
       <li></li>
@@ -129,9 +141,14 @@
       <li></li>
     </ol>
     <div id="Leaflet" class="iframeContainer">
-      <h2> Open Street Map, Leaflet, and GeoJSON </h2>
       <iframe class = "responsiveIframe" src="https://kiramarielazda.github.io/geom99/originalmap.html" title="Interactive Trail Map made with Leaflet" height="500" style="border:1px solid black;"></iframe>
     </div>
+    <h2>Lessons Learned: </h2>
+    <h3> Benefits </h3>
+      <li> </li>
+    <h3> Shortcomings </h3>
+    <li> </li>
+    <h2> Takeaways</h2>
     <div id="Leaflet">
       <h2> Open Street Map, Leaflet and KMZ files</h2>
       <h3> Overview:</h3>
@@ -151,17 +168,14 @@
       <p>Result 2: Orange “polygon” reflecting from the bends on the Dumoine Trail KMZ file. </p>
       <h3>Working with KMZ files:</h3>
       <p>KMZ files have been seeing their way out over the years and there is a reason why. After extensive testing with the original GPS KMZ file, in multiple platforms it proved to be extremely difficult and arose more problems than working with the GeoJSON, in similar platforms. The KMZ file needed many tweaks to get working with Leaflet and Open Street Map, such as adjusting the markers from the GPS markers, the trail having shadowing around the bends, while the GeoJSON was able to adjust the markers with ease and never had a shadowing issue around the trail bends. The KMZ files in QGIS proved to be just as difficult as the pop ups would not use any other field than ID or FID, whereas shapefiles and other formats were able to display all fields in the pop ups.</p>
-      <div class="iframeContainer">
-        <iframe class = "responsiveIframe" src="https://altalsm.github.io/pl1/opensource/leafletshapefile.html" title="leaflet-kmz" height="500" style="border:1px solid black;"></iframe>
-      </div>
     </div>
 <!--Section for Mapbox-->
   <div id="osm">
-    <h2>Mapbox <span class="fa fa-star checked"></span>
+    <h1>Mapbox <span class="fa fa-star checked"></span>
       <span class="fa fa-star checked"></span>
       <span class="fa fa-star checked"></span>
       <span class="fa fa-star "></span>
-      <span class="fa fa-star "></span></h2>
+      <span class="fa fa-star "></span></h1>
     <p> Mapbox is an open-source provider of impressive custom maps, has created and contributed to several high-performance mapping libraries like Mapbox GL-JS and Leaflet; 
       and has an application called Mapbox Studio for managing your own geospatial data and designing maps. 
       Compared to other options explored here, Mapbox offers a GUI to manage data on a web map while simultaneously providing beautiful base map tiles to work with.  </p>
@@ -194,16 +208,15 @@
   </div>
 <!-- Section for QGIS-->
   <div id="qgis">
-    <h2>QGIS <span class="fa fa-star checked"></span>
+    <h1>QGIS <span class="fa fa-star checked"></span>
       <span class="fa fa-star checked"></span>
       <span class="fa fa-star "></span>
       <span class="fa fa-star "></span>
-      <span class="fa fa-star "></span></h2>
-    <h3> Overview:</h3>
+      <span class="fa fa-star "></span></h1>
     <p>QGIS, being an open-source program with a rich variety of functionality, was worth looking into for base mapping needs. The program proved to be difficult to produce an effective functional Web map.
       As seen in the above section working with KMZ files is not ideal and many errors in QGIS were due to working with the KMZ files. After testing similar processes with
       a shapefile, many of the program crashes remained. With the only difference being the pop ups allowed more than the ID or FID field while working with shapefiles.<p>
-    <h3>The Process:</h3>
+    <h2>The Process:</h2>
     <h4>What Works:</h4>
     <ul>
       <li>Desktop application: Importing data, geoprocessing, styling, and symbology.</li>
