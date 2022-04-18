@@ -126,9 +126,16 @@
     <h2> Working with KML data </h2>
     <h3>The Process:</h3>
     <ol>
-      <li></li>
-      <li></li>
-      <li></li>
+      <li>Use the provided KML file format and initiate a new ArcGIS Pro session. </li>
+      <li>Through ArcGIS Pro, apply new symbology to the current point and line features in the KML files and save them in a folder outside of the Geodatabase. </li>
+      <li>Work through GitHub to create an account, a working repository, and html page to host the web map.</li>
+      <li>upload any KML files needed for the web map to a separate folder stored on GitHub.</li>
+      <li>Using Open Street Map locate a study area for the base map and record the URL, coordinates, zoom levels. (An alternative to this would be downloading the base tile and hosting a server using a docker file over GitHub) </li>
+      <li>Create a new map using Leaflet and the Open Street Map tile chosen above.</li>
+      <li>Implement Leaflet JavaScript API coding on the GitHub HTML page and include code to link the Open Street Map tile in with a URL. </li>
+      <li>Add a line of code to add Leaflet KML JavaScript libraries to allow the use of KML files.</li>
+      <li>Implement Leaflet Java script API to show the KML files over the Open Street Map base tile.</li>
+      <li>Continue implementing different leaflet coding to further the web map features (adding search, toggle, and pop ups.)</li>
     </ol>
     <div class="iframeContainer">
         <iframe class = "responsiveIframe" src="https://altalsm.github.io/pl1/opensource/leafletshapefile.html" title="leaflet-kmz" height="500" style="border:1px solid black;"></iframe>
@@ -162,30 +169,13 @@
     <ul>
       <li> Adding functionality to a map using Leaflet requires a significant amount of JavaScript programming, which has been a challenge and will require a lot of effort to master.</li>
       <li> As Leaflet is open source, its documentation and resources are not the most detailed or complete. Researching GIS forums is often required to understand the more complex concepts. </li>
+      <li>KMZ files are difficult to override styling using leaflet, and had to be done through ArcGIS Pro.</li>
+      <li>KMZ file line features appear to have polygons reflecting where the linear feature bends, and coding does not override this. </li>
     </ul>
     <h2> Takeaways</h2>
+    <p>For our collaborative project, we will use Leaflet as a solution. It is a simple customizable JavaScript library offering a variety of the functions and features needed to implement our web map. Our group has also decided against working with KMZ files, and to convert any KMZ files into GeoJSON format. After extensive testing with KMZ files in multiple platforms it proved to be extremely difficult and arose more problems than working with the GeoJSON file formats. </p>
   </div>
-    <div class="trials">
-      <h2> Open Street Map, Leaflet and KMZ files</h2>
-      <h3> Overview:</h3>
-      <p>The use of Open Street Map (OSM) and leaflet have been a suitable combination for web trail mapping needs. Open street maps provides a variety of different base maps inclusive with an array of base data not always seen in other open-source base maps. Combined with the simplicity of Leaflet's open-source JavaScript Library web mapping has never been easier. <p>
-      <h3>The Process:</h3>
-      <h4>What Works:</h4>
-      <ul>
-      <li>Displaying an OpenStreetMap base map from a URL.</li>
-      <li>Having an OpenStreetMap base map and using Leaflet’s JavaScript library to display the KMZ filesstored on the GitHub repository.</li>
-      <li>Displaying Pop ups for the KMZ point markers.</li>
-      <li>The ability to toggle layers on and off.</li>
-      <li>Overriding KMZ GPS Styling of point markers to web displayable markers.</li>
-      </ul>
-      <h4> What Doesn’t Work:</h4>
-      <p>Task 1: Hosting a tiled server over GitHub to host OpenStreetMap Base tiles.</p>
-      <p>Result 1:The docker file would not set up correctly to host a server for the OSM tile(s).</p>
-      <p>Result 2: Orange “polygon” reflecting from the bends on the Dumoine Trail KMZ file. </p>
-      <h3>Working with KMZ files:</h3>
-      <p>KMZ files have been seeing their way out over the years and there is a reason why. After extensive testing with the original GPS KMZ file, in multiple platforms it proved to be extremely difficult and arose more problems than working with the GeoJSON, in similar platforms. The KMZ file needed many tweaks to get working with Leaflet and Open Street Map, such as adjusting the markers from the GPS markers, the trail having shadowing around the bends, while the GeoJSON was able to adjust the markers with ease and never had a shadowing issue around the trail bends. The KMZ files in QGIS proved to be just as difficult as the pop ups would not use any other field than ID or FID, whereas shapefiles and other formats were able to display all fields in the pop ups.</p>
-    </div>
-<!--Section for Mapbox-->
+   <!--Section for Mapbox-->
   <div class="trials">
     <h1>Mapbox <span class="fa fa-star checked"></span>
       <span class="fa fa-star checked"></span>
@@ -233,27 +223,38 @@
       <span class="fa fa-star "></span>
       <span class="fa fa-star "></span>
       <span class="fa fa-star "></span></h1>
-    <p>QGIS, being an open-source program with a rich variety of functionality, was worth looking into for base mapping needs. The program proved to be difficult to produce an effective functional Web map.
-      As seen in the above section working with KMZ files is not ideal and many errors in QGIS were due to working with the KMZ files. After testing similar processes with
-      a shapefile, many of the program crashes remained. With the only difference being the pop ups allowed more than the ID or FID field while working with shapefiles.<p>
+    <p> QGIS is a free open-source GIS desktop application. It has similar functionality and setup as ESRI’s “ArcMap” but offering a free solution for data analysis and limited geoprocessing options. QGIS gives the option to produce three different web maps with the downloadable QGIS2Web plugin, including Mapbox GL JS, Leaflet, and OpenLayers.</p>
     <h2>The Process:</h2>
-    <h4>What Works:</h4>
+    <ol>
+      <li>Download the Free QGIS for desktop application</li>
+      <li>Import, analyze, process, and stylize data to form an appropriate base map.</li>
+      <li>Download QGIS2Web plugin within QGIS which allows the creation of web maps</li>
+      <li>Once downloaded use the extensions toolbar to locate the QGIS2Web plugin to create a web map.</li>
+      <li>Choose one of the following export methods for the web map; Mapbox GL JS, Leaflet, and OpenLayers.</li>
+      <li>Follow through the tabs, filling out requirements for pop ups, visible layer toggling, zoom, search and more. </li>
+      <li> Finally, export your map using the method and folder location of your choice. The map will export as a series of folders.</li>
+      <li>Upload the folders to your personal GitHub repository and use the index.html page to view the web map.</li> 
+    </ol>
+     <img src='images/AllisonQGISExample.png' alt='Allison QGIS Example'>
+    <h4><a href='https://altalsm.github.io/pl1/QGIS2/qgis2web_2022_04_06-10_57_22_751884/#11/'> Check out the QGIS base map here!</a></h4>
+    <h2>Lessons Learned:</h2>
+    <h3> Benefits</h3>
     <ul>
-      <li>Desktop application: Importing data, geoprocessing, styling, and symbology.</li>
-      <li>QGIS2Web Plugin: Downloadable plugin to create Web maps using either OpenLayers, Leaflet, or Mapbox GL JS as outputs.</li>
-      <li>Pop ups: Creating pop up boxes for layers (Widgets in QGIS).</li>
-      <li>Exporting a web map with the OpenLayers extension.</li>
-      <li>Exporting a web map with the MapBox GL JS extension.</li>
-      <li>Exporting and Hosting a QGIS leaflet exported map with the KMZ markers rendered as a “single value” and shapefiles (waterbody, river, road, tote road trail).</li>
+      <li>Provides users with a free open-source desktop application with the capability of producing a base web map.</li>
+      <li>Does not require programming to create the base map.</li>
+      <li>Offers a free solution for geoprocessing and data analysis.</li>
+      <li>Provides the user with the ability to export a web map in 3 different formats (Mapbox GL JS, Leaflet, and OpenLayers).</li>
+      <li>Exporting web maps with minimal styling that can be hosted in GitHub </li>
+      <li>Producing pop ups and the layer toggling abilities within the desktop software</li>
     </ul>
-    <h4> What Doesn’t Work:</h4>
-    <p>Task 1: Exporting the KML/KMZ styled Tote Road Trail markers as “unique values” by “name” as a Leaflet map.</p>
-    <p>Result 1: The Python script would fail each time, due to legend styling and crash QGIS desktop application. Tried: Removing all legends, and current styling to single values.</p>
-    <p>Result 1.1: The Python script would fail each time, due to a legend styling and crash QGIS desktop application. The result only changed if the KMZ files were completely removed from the project and brought back in and styled as single values.</p>
-    <p>Task 2: Importing the exported  OpenLayers Web map or MapBox GL JS Web map and importing them into GitHub.</p>
-    <p>Result 2: GitHub would not accept the folders containing the styling for the OpenLayers Web map or the Markers for MapBox GL JS Web map as there were too many styling options (Over 100). Another issue being some files wouldn’t import to GitHub as they were “hidden”.</p>
-    <p>Task 3: Inserting specified text into pop ups on KMZ files.</p>
-    <p>Result 3: Only the ID or FID fields could be used from the KMZ files for the Web map popups, and the pop ups for the shapefiles weren't easy to filter through.</p>
+    <h3>Shortcomings</h3>
+    <ul>
+      <li>The desktop application had many crashes and failures, with the program freezing and python scripting errors occurring due to a variety of reasons at different times.</li>
+      <li>Trouble occurred while exporting a web map with a large variety of styling while using KMZ files. The output web map files in all three formats would either not be accepted in GitHub, or the program would crash.</li>
+      <li>Creating pop ups for KMZ files would only allow the input of the ID or FID field.</li>
+    </ul>
+    <h2> Takeaways</h2>
+      <p>For our collaborative project, we have decided against using QGIS and dealing with the associated risks of program bugs, crashes, and failures while working on a timeline that will not allow for many setbacks.</p>
   </div>
 <!-- Footer -->
   <footer class="w3-center w3-black w3-padding-64">
