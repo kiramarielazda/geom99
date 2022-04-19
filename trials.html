@@ -59,11 +59,11 @@
       <!-- Right-sided navbar links -->
       <div class="w3-right w3-hide-small">
         <a href="index.html#about" class="w3-bar-item w3-button">ABOUT</a>
-        <a href="#work" class="w3-bar-item w3-button"><i class="fa-solid fa-list"></i> TRIALS</a>
+        <a href="trials.html" class="w3-bar-item w3-button"><i class="fa-solid fa-list"></i> TRIALS</a>
         <a href="solution.html" class="w3-bar-item w3-button"><i class="fa-solid fa-map"></i> SOLUTION</a>
         <a href="index.html#team" class="w3-bar-item w3-button"><i class="fa-solid fa-people-group"></i> TEAM</a>
       </div>
-      <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+    <!-- Hide right-floated links on small screens and replace them with a menu icon -->
       <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
         <i class="fa fa-bars"></i>
       </a>
@@ -274,5 +274,21 @@
     <p>Created for Fleming College GIS | April 2022</p>
     <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
   </footer>
+  <script>
+    // Toggle between showing and hiding the sidebar when clicking the menu icon
+    var mySidebar = document.getElementById("mySidebar");
+
+    function w3_open() {
+        if (mySidebar.style.display === 'block') {
+        mySidebar.style.display = 'none';
+        } else {
+        mySidebar.style.display = 'block';
+        }
+    }
+    // Close the sidebar with the close button
+    function w3_close() {
+        mySidebar.style.display = "none";
+    }
+  </script>
 </body>
 </html>
