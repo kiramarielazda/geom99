@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+      html,
+      body,
+      #map {
+        padding: 0;
+        margin: 0;
+        height: 100%;
+        width: 100%;
+      }
+    </style>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+   integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+   crossorigin=""/>
+  <link rel="stylesheet" href="CSS/leaflet-search.css"/>
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+   integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+   crossorigin=""></script>
+   <script type="text/javascript" src="JS/leaflet_ajax.js"></script>
+   <script src="JS/leaflet-providers.js"></script>
+  <title>Trail Map</title>
+</head>
+<body>
+<div id="map"></div>
+<script src="JS/leaflet-search.js"></script>
+
+  <script>
+    var map = L.map('map').setView([46.31, -77.83], 12);
+    map.createPane('lower').style.zIndex = 250;
+    map.createPane('middle').style.zIndex = 450;
+    map.createPane('upper').style.zIndex = 650;
+    // var OpenTopoMap = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
+    //   pane: 'lower',
+    //   maxZoom: 17,
+    //   attribution: 'Map data: &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, <a href="http://viewfinderpanoramas.org">SRTM</a> | Map style: &copy; <a href="https://opentopomap.org">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)'
+    // });
+    // OpenTopoMap.addTo(map);
+    var customMap = L.tileLayer('https://api.mapbox.com/styles/v1/klazda/ck5fqbg7x25k11iuoiqyxr427/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1Ijoia2xhemRhIiwiYSI6ImNrNTVmazFsdDAzYXYzZW1yOWVvZ3YzMDYifQ.UTJZn8nPgV7TePg5J9C7mg', {
+      pane:'lower',
+      maxZoom: 17,
+      attribution: 'Map data: &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>)'
+    });
+    customMap.addTo(map);
+    var myStyle = {
+      color: 'brown',
+      weight: 2,
+      dashArray: [10,10],
+      dashOffset: 2
+    };
+    var myIcon = L.Icon.extend({
+      options: {
+        iconSize: [20,20],
+        iconAnchor: [10,20]
+      }
+    });
+    var tent = new myIcon({iconUrl:'icons/tent.png'});
+    var pin = new myIcon({iconUrl: 'icons/pin.png'});
+    var trail = new L.GeoJSON.AJAX("JSON/trail.geojson", {style:myStyle, pane: 'middle'}).addTo(map);
+    
+    var POILayer = new L.GeoJSON.AJAX("JSON/points.geojson",{
+      filter: function(feature, layer) {
+        return feature.properties.featuretype == "Marker";
+      },
+      pointToLayer: function(feature, latlng){
+        return L.marker(latlng, {icon: pin});
+      },
+      onEachFeature: function (feature, layer) {
+        layer.bindPopup('<h1>name: '+feature.properties.name+'</p>');
+      },
+    }).addTo(map);
+    POILayer.bin
+    
+    var campsiteLayer = new L.GeoJSON.AJAX("JSON/points.geojson",{
+      filter: function(feature, layer) {
+        return feature.properties.featuretype == "Campsite";
+      },
+      pointToLayer: function(feature, latlng){
+        return L.marker(latlng, {icon: tent});
+      },
+      onEachFeature: function (feature, layer) {
+        layer.bindPopup('<h1>name: '+feature.properties.name+'</p>');
+      },  
+    }).addTo(map);
+    campsiteLayer.bin
+    
+    L.control.scale({metric:true, imperial:false}).addTo(map);
+    
+    var basemap = {
+      "Terrain": OpenTopoMap
+    };
+    var overlayMaps = {
+      "<img src='icons/tent.png'> Campsites": campsiteLayer,
+      "<img src='icons/pin.png'> KM Markers": POILayer
+    };
+    L.control.layers(basemap, overlayMaps).addTo(map);
+    
+    var allPoints = L.layerGroup([POILayer, campsiteLayer]);
+    var searchControl = new L.Control.Search({
+      layer: allPoints,
+      propertyName: 'name',
+      marker: false,
+      moveToLocation: function(latlng, title, map) {
+        var zoom = 18
+        map.setView(latlng, zoom);
+      }
+	  });
+    searchControl.on('search:locationfound', function(e) {
+      console.log(e);
+      if(e.layer._popup)
+        e.layer.setPopupContent(e.layer.feature.properties.name);
+        e.layer.openPopup();
+    }).on('search:collapsed', function(e) {
+      POILayer.eachLayer(function(layer) {
+        POILayer.resetStyle(layer);
+		  });	
+	  });
+	
+	  map.addControl( searchControl );
+  </script>
+</body>
+</html>
