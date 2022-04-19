@@ -86,21 +86,37 @@
         <span class="fa fa-star checked"></span>
         <span class="fa fa-star"></span>
         <span class="fa fa-star"></span></h1>
-      <!-- these sections are incomplete, needed to take a break so the basic content format is here,
-      then I'll add screenshots into the design after I've got the words worked out-->
-        <h3> Overview:</h3>
-      <p>what is survey123 and how does it work<p>
-      <h3>The Process:</h3>
-      <h4>What Works:</h4>
+      <p> ArcGIS Survey123 is a complete solution for creating, sharing and analyzing surveys and form records. You can collect data via the web or mobile devices, and the forms are 
+        fillable even without an internet connection. Data collected via Survey123 is immediately accessible across all ArcGIS services, along with many of Esri's other field-based 
+        applications. Your form's results can be analyzed quickly directly after collection through graphs and maps available via the Analyze and Data tabs. </p>
+      <h2>The Process: </h2>
+      <ol>
+        <li>Sign into ArcGIS services and launch either the Survey123 website or the Survey123 Connect desktop application. </li>
+        <li>Create a new form from a previously created XLSForm, from a template, or completely from scratch. </li>
+        <li>Use the survey creation tab to customize the form's colours, background, and question styles to your suitability. </li>
+        <li>After the form is complete, set sharing to accommodate your submission needs and then publish the form. 
+          This can be integrated either via an external URL or embeddable code to be used within your website. </li>
+      </ol>
+      <img src='images/survey123Hazard.jpg' alt='screenshot of Survey123 trail hazards form'>
+      <h4><a href='https://arcg.is/0Hun9S'> Check out the Survey123 trail hazards form here!</a></h4>
+      <img src='images/survey123POI.jpg' alt='screenshot of Survey123 point of interest form'>
+      <h4><a href='https://arcg.is/1rHzji0'> Check out the Survey123 trail POI form here!</a></h4>
+      <h2>Lessons Learned: </h2>
+      <h3> Benefits </h3>
       <ul>
-        <li>Desktop application: XLSForm.</li>
-        <li>Website forms: pretty self explanatory.</li>
-        <li>Embed forms: also self explanatory</li>
-        <li>Exporting an XLSForm with Survey123 Connect.</li>
-        <li>Using templates on Esri website.</li>
+        <li> Forms can be designed via Survey123 website or the ArcGIS Survey123 Connect desktop application. </li>
+        <li> Embeddable form code. </li>
+        <li> Esri has many help resources and training available on the creation and upkeep of forms and data storage. </li>
+        <li> Many templates and form customization options are available. </li>
       </ul>
-      <h4> What Doesn't Work:</h4>
-      <p>really nothing, very adaptable and customizable</p>
+      <h3> Shortcomings </h3>
+      <ul>
+        <li> Using the service requires an Esri license by the survey administrator. </li>
+        <li> Desktop application is required to work with XLSForms. </li>
+      </ul>
+      <h2> Takeaways</h2>
+        <p>For our collaborative project, we have decided not to use Survey123 due to the client's need for open-source solutions. They do not have an Esri license 
+          and so would not be able to access the form or any of the data collected after completion of the academic side of the project. </p>
   </div>
 <!--Section for Kobo Toolbox-->
   <div class="trials">
@@ -109,18 +125,39 @@
         <span class="fa fa-star checked"></span>
         <span class="fa fa-star checked"></span>
         <span class="fa fa-star checked"></span></h1>
-      <h3> Overview:</h3>
-      <p>what is kobotoolbox and how does it work<p>
-      <h3>The Process:</h3>
-      <h4>What Works:</h4>
+      <p> KoBoToolbox is a free and open-source suite of tools for field data collection for use in challenging environments. It allows the user to collect data using mobile devices as 
+        well as computers, offering support through the KoBoCollect mobile app and Enketo web forms. These forms are optimized for use by humanitarian organizations and hazardous field 
+        environments, designed to collect reliable information quickly following a crisis. Their interface for form creation is simplified and easily navigable to appeal to any user. </p>
+      <h2>The Process: </h2>
+      <ol>
+        <li>Create a research KoBoToolbox account. All form creation takes place through their website.  </li>
+        <li>Create a new form from a previously created XLSForm, from a previously generated template, or completely from scratch. </li>
+        <li>Use Enketo-based formatting on the note sections of each question to add any additional information or elements to the form. </li>
+        <li>After the form is complete, set sharing to accommodate your submission needs and then deploy the form. 
+          This can be integrated either via an external URL or embeddable code to be used within your website. </li>
+      </ol>
+      <img src='images/koboHazard.jpg' alt='screenshot of KoBoToolbox trail hazards form'>
+      <h4><a href='https://ee.kobotoolbox.org/x/HKOIdXeT'> Check out the KoBoToolbox trail hazards form here!</a></h4>
+      <img src='images/koboPOI.jpg' alt='screenshot of KoBoToolbox point of interest form'>
+      <h4><a href='https://ee.kobotoolbox.org/x/2vtImgav'> Check out the KoBoToolbox trail POI form here!</a></h4>
+      <h2>Lessons Learned: </h2>
+      <h3> Benefits </h3>
       <ul>
-        <li>Website forms: pretty self explanatory.</li>
-        <li>Embed forms: also self explanatory</li>
-        <li>Importing XLSForms.</li>
+        <li> Does not require any additional software or a license. </li>
+        <li> Offers a free solution for data collection and analysis. </li>
+        <li> Simple embeddable form code for web integration. </li>
+        <li> KoBoToolbox and Enketo both offer help documentation and test forms to demonstrate form design and implementation. </li>
       </ul>
-      <h4> What Doesn't Work:</h4>
-      <p>import of Survey123 XLSForm without editing after for formatting</p>
-      <p>import of Survey123 XLSForm without removing Esri:bind fields</p>
+      <h3> Shortcomings </h3>
+      <ul>
+        <li> The forms are mildly customizable, which may deter users who would like a more detailed or graphically pleasing form. </li>
+        <li> Forms do not work in private browsing mode. </li>
+        <li> If importing from an XLSForm, any Esri fields must be removed before import – 
+          these fields bind the form to only Esri products and will fully prevent the form from being deployed. </li>
+      </ul>
+      <h2> Takeaways</h2>
+        <p>For our collaborative project, we will use KoBoToolbox to design two custom forms for use by our client: one will be integrated into the website 
+          for future data collection by trail users, and one will be for use by the organization's volunteers and distributed separately. </p>
   </div>
 <!--Section for Leaflet-->
   <div class="section-break"> </div>
