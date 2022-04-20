@@ -34,6 +34,11 @@
   .trials {padding: 5%;}
   #survey {margin-top:50px;}
   .checked {color: orange;}
+  /* Rounded border for the horizontal dividers */
+  hr.rounded {
+    border-top: 8px solid #375634;
+    border-radius: 5px;
+  }
   .iframeContainer {
     position: relative;
     overflow: hidden;
@@ -127,6 +132,7 @@
         <p>For our collaborative project, we have decided not to use Survey123 due to the client's need for open-source solutions. They do not have an Esri license 
           and so would not be able to access the form or any of the data collected after completion of the academic side of the project. </p>
   </div>
+  <hr class="rounded">
 <!--Section for Kobo Toolbox-->
   <div class="trials">
       <h1>KoboToolbox <span class="fa fa-star checked"></span>
@@ -168,9 +174,8 @@
         <p>For our collaborative project, we will use KoBoToolbox to design two custom forms for use by our client: one will be integrated into the website 
           for future data collection by trail users, and one will be for use by the organization's volunteers and distributed separately. </p>
   </div>
-<!--Section for Leaflet-->
-  <div class="section-break"> </div>
-
+  <hr class="rounded">
+  <!--Section for Leaflet-->
   <div class="trials">
     <h1>Leaflet<span class="fa fa-star checked"></span>
       <span class="fa fa-star checked"></span>
@@ -235,7 +240,8 @@
       Our group has also decided against working with KML files, and to convert any KML files into GeoJSON format. After extensive testing with KML files in multiple platforms it proved to be extremely difficult 
       and arose more problems than working with the GeoJSON file format. GeoJSON files are easily editable and will allow us to add attributes necessary for designing popups, search bars and other layer functionality. </p>
   </div>
-   <!--Section for Mapbox-->
+  <hr class="rounded">
+  <!--Section for Mapbox-->
   <div class="trials">
     <h1>Mapbox <span class="fa fa-star checked"></span>
       <span class="fa fa-star checked"></span>
@@ -276,6 +282,7 @@
           will not need to be adjusted once we hand off the project because our client is not experienced with the platform. We are looking forward to exploring all the design options available
           within Mapbox Studio to make our trail's basemap attractive and informative.</p>
   </div>
+  <hr class="rounded">
 <!-- Section for QGIS-->
   <div class="trials">
     <h1>QGIS <span class="fa fa-star checked"></span>
