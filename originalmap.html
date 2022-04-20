@@ -10,6 +10,7 @@
         height: 100%;
         width: 100%;
       }
+      body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
     </style>
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
@@ -66,7 +67,7 @@
         return L.marker(latlng, {icon: pin});
       },
       onEachFeature: function (feature, layer) {
-        layer.bindPopup('<h1>name: '+feature.properties.name+'</p>');
+        layer.bindPopup('<p>Name: '+feature.properties.name+'</p>');
       },
     }).addTo(map);
     POILayer.bin
