@@ -80,7 +80,7 @@
         return L.marker(latlng, {icon: tent});
       },
       onEachFeature: function (feature, layer) {
-        layer.bindPopup('<h1>name: '+feature.properties.name+'</p>');
+        layer.bindPopup('<p>Name: '+feature.properties.name+'</p>');
       },  
     }).addTo(map);
     campsiteLayer.bin
