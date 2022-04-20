@@ -31,11 +31,11 @@
   .w3-bar .w3-button {
     padding: 16px;
   }
-  /* Prevent the div elementsfrom extending to the edges of the page*/
+  /* Prevent the div elements from extending to the edges of the page*/
   .trials {padding: 5%;}
   #survey {margin-top:50px;}
   .checked {color: orange;}
-  /* Rounded border for the horizontal dividers */
+  /* Rounded border for the horizontal dividers, prevent the hr elements from extending to the edges of the page */
   hr.rounded {
     border-top: 8px solid #375634;
     border-radius: 5px;
@@ -92,7 +92,7 @@
   
 <!--Section for survey123-->
 <!--Reference for the checked/unchecked stars https://www.w3schools.com/howto/howto_css_star_rating.asp-->
- <div class="trials" id="survey">
+  <div class="trials" id="survey">
     <div class="w3-panel">
       <h1><b>OUR TRIALS</b></h1>
       <p>To provide our client with an open-source data collection form and interactive web map, we explored several options. Our process and findings are detailed below.</p>
@@ -120,15 +120,15 @@
       <h2>Lessons Learned: </h2>
       <h3> Benefits </h3>
       <ul>
-        <li> Forms can be designed via Survey123 website or the ArcGIS Survey123 Connect desktop application. </li>
-        <li> Embeddable form code. </li>
-        <li> Esri has many help resources and training available on the creation and upkeep of forms and data storage. </li>
-        <li> Many templates and form customization options are available. </li>
+        <li>Forms can be designed via Survey123 website or the ArcGIS Survey123 Connect desktop application. </li>
+        <li>Easily embeddable HTML form code with varying options for form segment layout. </li>
+        <li>Esri has many help resources and training available on the creation and upkeep of forms and data storage. </li>
+        <li>Many templates and form customization options are available. </li>
       </ul>
       <h3> Shortcomings </h3>
       <ul>
-        <li> Using the service requires an Esri license by the survey administrator. </li>
-        <li> Desktop application is required to work with XLSForms. </li>
+        <li>Using the service requires an Esri license by the survey administrator. </li>
+        <li>The desktop application is required to work with XLSForms. </li>
       </ul>
       <h2> Takeaways</h2>
         <p>For our collaborative project, we have decided not to use Survey123 due to the client's need for open-source solutions. They do not have an Esri license 
@@ -160,16 +160,16 @@
       <h2>Lessons Learned: </h2>
       <h3> Benefits </h3>
       <ul>
-        <li> Does not require any additional software or a license. </li>
-        <li> Offers a free solution for data collection and analysis. </li>
-        <li> Simple embeddable form code for web integration. </li>
-        <li> KoBoToolbox and Enketo both offer help documentation and test forms to demonstrate form design and implementation. </li>
+        <li>Does not require any additional software or a license. </li>
+        <li>Offers a free solution for data collection and analysis. </li>
+        <li>Simple embeddable form code for web integration. </li>
+        <li>KoBoToolbox and Enketo Web Forms both offer help documentation and test forms to demonstrate form design and implementation. </li>
       </ul>
       <h3> Shortcomings </h3>
       <ul>
-        <li> The forms are mildly customizable, which may deter users who would like a more detailed or graphically pleasing form. </li>
-        <li> Forms do not work in private browsing mode. </li>
-        <li> If importing from an XLSForm, any Esri fields must be removed before import – 
+        <li>The forms are mildly customizable, which may deter users who would like a more detailed or graphically pleasing form. </li>
+        <li>Forms do not work in private browsing mode. </li>
+        <li>If importing from an XLSForm, any Esri fields must be removed before import – 
           these fields bind the form to only Esri products and will fully prevent the form from being deployed. </li>
       </ul>
       <h2> Takeaways</h2>
@@ -194,7 +194,7 @@
       <li>Use the provided KML file format and initiate a new ArcGIS Pro session. </li>
       <li>Through ArcGIS Pro, apply new symbology to the current point and line features in the KML files and save them in a folder outside of the Geodatabase. </li>
       <li>Work through GitHub to create an account, a working repository, and html page to host the web map.</li>
-      <li>upload any KML files needed for the web map to a separate folder stored on GitHub.</li>
+      <li>Upload any KML files needed for the web map to a separate folder stored on GitHub.</li>
       <li>Using Open Street Map locate a study area for the base map and record the URL, coordinates, zoom levels. (An alternative to this would be downloading the base tile and hosting a server using a docker file over GitHub) </li>
       <li>Create a new map using Leaflet and the Open Street Map tile chosen above.</li>
       <li>Implement Leaflet JavaScript API coding on the GitHub HTML page and include code to link the Open Street Map tile in with a URL. </li>
@@ -215,7 +215,7 @@
       <li>Choose a tile provider to form the base of the map. We have tried using a customized Mapbox tile, a simple OSM tile and <a href='http://leaflet-extras.github.io/leaflet-providers/preview/index.html'>other open-source tiles</a>. The example below uses a tile called OpenTopoMap.</li> 
       <li>Add a new GeoJSON data layer using the Leaflet AJAX commands.</li>
       <li>Use filters to select a subset of the GeoJSON point data, style it according to its attributes and access its properties to bind popups to the points. </li>
-      <li>Use Leaflet’s layer control to allow users to toggle layers on and off on the map.</li>
+      <li>Use Leaflet's layer control to allow users to toggle layers on and off on the map.</li>
       <li>Download and use the <a href='https://github.com/stefanocudini/leaflet-search'>Search Control plugin for Leaflet</a> to allow users to search for features on the map and zoom to the selected result.</li>  
     </ol>
     <p><i>Try searching the keywords 'camp' or 'km' on the map below and toggle the layers on and off!</i></p>
@@ -225,16 +225,16 @@
     <h2>Lessons Learned: </h2>
     <h3> Benefits </h3>
     <ul>
-      <li> GeoJSON’s structure makes it easy to edit and add properties and non-spatial attributes to the data. This is especially helpful for popup displays, searching keywords and filtering. </li>
-      <li> There is a substantial number of resources available to help integrate GeoJSON data on a Leaflet map and make it interactive, like the plugins mentioned in the process steps above. </li>
-      <li> Leaflet is designed to work with GeoJSON; it automatically recognizes the structure of the spatial properties. </li>
-      <li> Leaflet is a powerful tool for web mapping and customization with many tutorials, functions and features to experiment with. </li>
-      <li> It is extremely simple to swap base map tiles in and out of the script because it only requires one line of code. We have successfully used OSM, custom Mapbox and other tiles in our maps.</li>
+      <li>GeoJSON's structure makes it easy to edit and add properties and non-spatial attributes to the data. This is especially helpful for popup displays, searching keywords and filtering. </li>
+      <li>There is a substantial number of resources available to help integrate GeoJSON data on a Leaflet map and make it interactive, like the plugins mentioned in the process steps above. </li>
+      <li>Leaflet is designed to work with GeoJSON; it automatically recognizes the structure of the spatial properties. </li>
+      <li>Leaflet is a powerful tool for web mapping and customization with many tutorials, functions and features to experiment with. </li>
+      <li>It is extremely simple to swap base map tiles in and out of the script because it only requires one line of code. We have successfully used OSM, custom Mapbox and other tiles in our maps.</li>
     </ul>
     <h3> Shortcomings </h3>
     <ul>
-      <li> Adding functionality to a map using Leaflet requires a significant amount of JavaScript programming, which has been a challenge and will require a lot of effort to master.</li>
-      <li> As Leaflet is open source, its documentation and resources are not the most detailed or complete. Researching GIS forums is often required to understand the more complex concepts. </li>
+      <li>Adding functionality to a map using Leaflet requires a significant amount of JavaScript programming, which has been a challenge and will require a lot of effort to master.</li>
+      <li>As Leaflet is open source, its documentation and resources are not the most detailed or complete. Researching GIS forums is often required to understand the more complex concepts. </li>
       <li>KMZ files are difficult to override styling using leaflet, and had to be done through ArcGIS Pro.</li>
       <li>KMZ file line features appear to have polygons reflecting where the linear feature bends, and coding does not override this. </li>
     </ul>
@@ -259,7 +259,7 @@
       <li>Create a free Mapbox account and generate an API access token to use on your webpage. </li>
       <li>Open the Mapbox Studio application and create a new style, either by using a predefined map template or starting from an empty map. </li>
       <li>Use the Mapbox Studio application to customize the base map's colors, features, text and more to meet your needs. </li>
-      <li>To add your own data to the map, go to Mapbox Studio’s Datasets page and create a new dataset. This opens another application that allows you to draw new features or upload existing data in GeoJSON, JSON or csv format. </li>
+      <li>To add your own data to the map, go to Mapbox Studio's Datasets page and create a new dataset. This opens another application that allows you to draw new features or upload existing data in GeoJSON, JSON or csv format. </li>
       <li>After exporting your data, it can be added to your custom map from the layers tab of the Mapbox Studio Styles application where custom styling of your point, line and polygon data can be done.  </li>
       <li>The same data creation process can be used to add place labels to the map that are not included in the default Mapbox placenames layer.</li>
       <li>With your map complete, it is ready to be published and shared using an integration url that can be accessed in your website using Mapbox GL-JS or Leaflet.  </li>
@@ -269,9 +269,9 @@
     <h2>Lessons Learned: </h2>
     <h3> Benefits </h3>
     <ul>
-      <li> Provides users with the opportunity to customize and design maps to suit their needs. </li>
-      <li> Does not require any programming for the map design itself. </li>
-      <li> Allows 50’000 free map loads and 200’000 free static tile requests per month, which is suitable for clients looking for low-cost web mapping solutions. </li>
+      <li>Provides users with the opportunity to customize and design maps to suit their needs. </li>
+      <li>Does not require any programming for the map design itself. </li>
+      <li>Allows 50,000 free map loads and 200,000 free static tile requests per month, which is suitable for clients looking for low-cost web mapping solutions. </li>
       <li>Easy data integration with the map </li>
       <li>Mapbox offers detailed tutorials and documentation to support users throughout the design and implementation process. </li>
     </ul>
@@ -294,7 +294,7 @@
       <span class="fa fa-star "></span>
       <span class="fa fa-star "></span>
       <span class="fa fa-star "></span></h1>
-    <p> QGIS is a free open-source GIS desktop application. It has similar functionality and setup as ESRI’s “ArcMap” but offering a free solution for data analysis and limited geoprocessing options. QGIS gives the option to produce three different web maps with the downloadable QGIS2Web plugin, including Mapbox GL JS, Leaflet, and OpenLayers.</p>
+    <p> QGIS is a free open-source GIS desktop application. It has similar functionality and setup as Esri's “ArcMap” but offering a free solution for data analysis and limited geoprocessing options. QGIS gives the option to produce three different web maps with the downloadable QGIS2Web plugin, including Mapbox GL JS, Leaflet, and OpenLayers.</p>
     <h2>The Process:</h2>
     <ol>
       <li>Download the Free QGIS for desktop application</li>
@@ -303,10 +303,10 @@
       <li>Once downloaded use the extensions toolbar to locate the QGIS2Web plugin to create a web map.</li>
       <li>Choose one of the following export methods for the web map; Mapbox GL JS, Leaflet, and OpenLayers.</li>
       <li>Follow through the tabs, filling out requirements for pop ups, visible layer toggling, zoom, search and more. </li>
-      <li> Finally, export your map using the method and folder location of your choice. The map will export as a series of folders.</li>
+      <li>Finally, export your map using the method and folder location of your choice. The map will export as a series of folders.</li>
       <li>Upload the folders to your personal GitHub repository and use the index.html page to view the web map.</li> 
     </ol>
-     <img src='images/AllisonQGISExample.png' alt='Allison QGIS Example'>
+    <img src='images/AllisonQGISExample.png' alt='Allison QGIS Example'>
     <h4><a href='https://altalsm.github.io/pl1/QGIS2/qgis2web_2022_04_06-10_57_22_751884/#11/'> Check out the QGIS base map here!</a></h4>
     <h2>Lessons Learned:</h2>
     <h3> Benefits</h3>
